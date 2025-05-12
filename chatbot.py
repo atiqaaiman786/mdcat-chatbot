@@ -8,6 +8,8 @@ from langchain_core.documents import Document
 from transformers import pipeline
 from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+
 
 
 # Load JSON files
@@ -22,7 +24,9 @@ past_docs = [Document(page_content=d["question"] + "\n" + d["answer"]) for d in 
 faq_docs = [Document(page_content=d["question"] + "\n" + d["answer"]) for d in faq_data]
 
 # Create Embeddings
-embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+#embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+
 
 past_index = FAISS.from_documents(past_docs, embedding)
 faq_index = FAISS.from_documents(faq_docs, embedding)
