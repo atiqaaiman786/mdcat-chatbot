@@ -3,10 +3,11 @@
 # chatbot.py
 import json
 import streamlit as st
-from langchain.embeddings import SentenceTransformerEmbeddings
-from langchain.vectorstores import FAISS
 from langchain.schema import Document
 from transformers import pipeline
+from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain_community.vectorstores import FAISS
+
 
 # Load JSON files
 with open(r"C:\Users\DELL\Downloads\mdcat\json\combined_mdcat_qa.json", "r", encoding="utf-8", errors="ignore") as f:
