@@ -11,7 +11,6 @@ from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
 
-
 # Load JSON files
 with open(r"C:\Users\DELL\Downloads\mdcat\json\combined_mdcat_qa.json", "r", encoding="utf-8", errors="ignore") as f:
     past_data = json.load(f)
