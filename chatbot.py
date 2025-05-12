@@ -10,6 +10,8 @@ from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
+# Set to force Transformers to use PyTorch only
+os.environ["TRANSFORMERS_NO_TF"] = "1"
 
 # Load JSON files
 with open(r"C:\Users\DELL\Downloads\mdcat\json\combined_mdcat_qa.json", "r", encoding="utf-8", errors="ignore") as f:
