@@ -1,0 +1,282 @@
+[
+  {
+    "question": "What is MDCAT and who conducts it?",
+    "answer": "A: MDCAT (Medical and Dental Colleges Admission Test) is a standardized paper-based exam conducted by the Pakistan Medical & Dental Council (PM&DC) to ensure a uniform admission process across all medical and dental institutions in Pakistan."
+  },
+  {
+    "question": "What is the format and duration of the MDCAT exam?",
+    "answer": "A: The exam is a paper-based test consisting of 200 MCQs, and the total duration is 3.5 hours."
+  },
+  {
+    "question": "What are the passing criteria for MDCAT?",
+    "answer": "A: A minimum of 65% marks is required for admission into Medical colleges and 55% for Dental colleges. There is no negative marking."
+  },
+  {
+    "question": "How are the questions distributed among subjects in MDCAT?",
+    "answer": "A: - Biology: 68 MCQs (34%)\n- Chemistry: 54 MCQs (27%)\n- Physics: 54 MCQs (27%)\n- English: 18 MCQs (9%)\n- Logical Reasoning: 6 MCQs (3%)"
+  },
+  {
+    "question": "What is the difficulty level of the exam questions?",
+    "answer": "A: 20% Easy, 60% Moderate, 20% Difficult. Also, 70% recall-based and 30% application-based in Biology, Chemistry, and Physics."
+  },
+  {
+    "question": "What are the key topics in Biology for MDCAT?",
+    "answer": "A: Topics include Biodiversity, Bioenergetics, Biological Molecules, Cell Structure, Enzymes, Evolution, Reproduction, Genetics, and more."
+  },
+  {
+    "question": "Is Evolution part of the MDCAT syllabus?",
+    "answer": "A: Yes, it includes concepts like Darwin’s theory, Lamarck’s theory, and evidence of evolution."
+  },
+  {
+    "question": "Are diagrams and cell organelles part of the MDCAT Biology?",
+    "answer": "A: Yes, candidates must know structures and functions of nucleus, mitochondria, chloroplasts, and others."
+  },
+  {
+    "question": "Does MDCAT Chemistry include Organic Chemistry?",
+    "answer": "A: Yes, topics include Hydrocarbons, Alkyl Halides, Alcohols, Phenols, Aldehydes, Ketones, and Macromolecules."
+  },
+  {
+    "question": "Is the periodic table and trends covered?",
+    "answer": "A: Yes, the chemistry of S and P block elements, including trends in reactivity, atomic radii, and electronegativity, are included."
+  },
+  {
+    "question": "Are chemical reactions and equations included?",
+    "answer": "A: Yes, stoichiometry, equilibrium, kinetics, thermochemistry, and electrochemistry are part of the curriculum."
+  },
+  {
+    "question": "What Physics topics are important for MDCAT?",
+    "answer": "A: Key areas include Mechanics, Thermodynamics, Electrostatics, Current Electricity, Electromagnetism, and Nuclear Physics."
+  },
+  {
+    "question": "Is nuclear decay and half-life included?",
+    "answer": "A: Yes, concepts of spontaneous decay, half-life, and biological effects of radiation are tested."
+  },
+  {
+    "question": "Do students need to memorize equations in Physics?",
+    "answer": "A: Yes, understanding and applying standard equations for motion, energy, and electromagnetism is necessary."
+  },
+  {
+    "question": "What is the purpose of the English section in MDCAT?",
+    "answer": "A: It assesses vocabulary, grammar, sentence structure, comprehension, and ability to understand academic-level English."
+  },
+  {
+    "question": "Will there be reading comprehension questions?",
+    "answer": "A: Yes, students must read short passages and answer context-based questions."
+  },
+  {
+    "question": "Are grammar and sentence correction part of the test?",
+    "answer": "A: Yes, it includes tenses, subject-verb agreement, articles, prepositions, punctuation, and sentence structure."
+  },
+  {
+    "question": "What is tested in the Logical Reasoning section?",
+    "answer": "A: It includes Critical Thinking, Symbol Series, Logical Deductions, Problem Solving, Course of Action, and Cause & Effect analysis."
+  },
+  {
+    "question": "Are logic puzzles and sequences included?",
+    "answer": "A: Yes, students may be asked to analyze letter/number patterns, family relations, or draw conclusions from given facts."
+  },
+  {
+    "question": "Is reasoning based on real-life scenarios part of the test?",
+    "answer": "A: Yes, short real-life based arguments are given to evaluate decision-making and analytical thinking."
+  },
+  {
+    "question": "Who is eligible to apply for MBBS or BDS programs in Pakistan?",
+    "answer": "A: A candidate must have passed the MDCAT, scored at least 60% in FSc/HSSC (or equivalent), and passed Biology and Chemistry. They may opt for either Physics or Mathematics as the third subject."
+  },
+  {
+    "question": "Are foreign or overseas Pakistani students required to take MDCAT?",
+    "answer": "A: No. Foreign or overseas Pakistani students applying for reserved seats may appear in SAT-II (minimum 550 per subject) or foreign MCAT/UCAT with at least 50% marks in relevant subjects."
+  },
+  {
+    "question": "What are the official admission deadlines?",
+    "answer": "A: - Public Medical Colleges: December 31\n- Private Medical Colleges: January 31\n- Public Dental Colleges: February 15\n- Private Dental Colleges: February 28"
+  },
+  {
+    "question": "What is the merit calculation formula for admissions?",
+    "answer": "A: - MDCAT: 50%\n- F.Sc (Pre-Medical)/Equivalent: 40%\n- Matriculation/SSC/Equivalent: 10%"
+  },
+  {
+    "question": "Can students apply to both medical and dental colleges?",
+    "answer": "A: Yes, but they must submit separate applications for each. A student not applying for a specific program is not eligible for it."
+  },
+  {
+    "question": "How are merit lists and admissions finalized?",
+    "answer": "A: Merit lists are published by the admitting university. At least three merit lists are displayed, and students must deposit fees within 3 working days. Failure to do so results in loss of admission rights."
+  },
+  {
+    "question": "What is the rule for vacant or unfilled seats?",
+    "answer": "A: Vacant seats in public sector colleges can be filled only up to a date notified by the Council. After that, no admissions are allowed. Vacant private sector seats after admissions remain unfilled."
+  },
+  {
+    "question": "Can private colleges set their own fee and merit criteria?",
+    "answer": "A: Yes, but they must follow the merit formula and publish fees transparently on their website. The maximum admission application fee is PKR 2,000."
+  },
+  {
+    "question": "When must private colleges publish their final merit list?",
+    "answer": "A: By January 15 each year. It must be shared with both students and PM&DC."
+  },
+  {
+    "question": "What happens if a student accepts admission in two colleges?",
+    "answer": "A: They must cancel the first admission in writing. If not, all admission offers become void, and the student becomes ineligible."
+  },
+  {
+    "question": "How is student registration handled?",
+    "answer": "A: Students are registered with PM&DC after verification by the affiliating university. The CNIC becomes the official registration number."
+  },
+  {
+    "question": "What is the annual PM&DC student registration fee?",
+    "answer": "A: It is notified each year and applies throughout the student's program. No refund is available if a student drops out or is expelled."
+  },
+  {
+    "question": "Can a student migrate from one college to another?",
+    "answer": "A: Yes, but only after 2nd year MBBS or 1st year BDS. Migration must be merit-based if multiple applications are received for the same vacancy."
+  },
+  {
+    "question": "Is an NOC required for migration?",
+    "answer": "A: No, colleges and universities cannot restrict a student’s right to transfer or demand a No Objection Certificate."
+  },
+  {
+    "question": "Who sets the curriculum for MBBS and BDS programs?",
+    "answer": "A: The National Medical and Dental Academic Board formulates the curriculum, which must be followed strictly by all colleges."
+  },
+  {
+    "question": "Who conducts professional exams and declares results?",
+    "answer": "A: Only the affiliating university can set, mark, and announce results for professional exams—not the colleges themselves."
+  },
+  {
+    "question": "Can a student retake a failed professional exam?",
+    "answer": "A: Yes. Retakes are allowed as per university policy without additional tuition fees (though a small retake exam fee may apply)."
+  },
+  {
+    "question": "Who is eligible for a house job?",
+    "answer": "A: A student who has passed the final professional exam and completed the study program is eligible for provisional licensing and a house job."
+  },
+  {
+    "question": "Is it mandatory for hospitals to accept their own graduates for house jobs?",
+    "answer": "A: Yes. A teaching hospital cannot refuse a house job to its own college graduate."
+  },
+  {
+    "question": "Are house officers in private hospitals entitled to stipends?",
+    "answer": "A: Yes. Private hospitals must pay at least the same stipend as public hospitals in that province/territory."
+  },
+  {
+    "question": "Can I change my MDCAT center after registration in MDCAT 2024 re-take by sts ?",
+    "answer": "A: No, you cannot change your MDCAT 2024 retake test center after registration. SIBA Testing Services (STS)"
+  },
+  {
+    "question": "Will ID verification be conducted at the test center in MDCAT 2024?",
+    "answer": "A: Yes, ID verification will be conducted at the test center for MDCAT 2024, Candidates must bring their original Admit Slip to the test center, along with one of the following original documents, which must be presented for verification: CNIC, Juvenile Card, Passport, Matriculation Marksheet, or Intermediate Marksheet. Entry will be denied without these."
+  },
+  {
+    "question": "Are mobile jammers used during test in MDCAT 2024 ?",
+    "answer": "A: Yes, SIBA Testing Services (STS), under Sukkur IBA University, implemented stringent security measures during the MDCAT 2024 retake, including the deployment of mobile jammers at examination centers to prevent cheating through electronic devices.?\nIn an official press release dated November 16, 2024, STS emphasized its commitment to conducting the MDCAT retake across all six divisions of Sindh with full transparency and merit. The press release stated that the examination would be held under strict vigilance, ensuring the integrity of the process .\nFurthermore, STS announced that candidates must bring their original admit slips and one of the specified identification documentssuch as CNIC, Juvenile Card, Passport, Matriculation Marksheet, or Intermediate Marksheetfor verification at the test center. Failure to present these documents would result in denial of entry to the examination hall"
+  },
+  {
+    "question": "Can I retake MDCAT more than once ?",
+    "answer": "A: SIBA Testing Services follows the eligibility criteria and marking scheme as outlined by PMDC. The Pakistan Medical and Dental Council (PMDC) does not impose a limit on the number of attempts for the MDCAT. Candidates are allowed to retake the exam as many times as they wish to improve their scores. ?\nTherefore, while you can retake the MDCAT exam multiple times, each retake is subject to the policies and schedules set by the PMDC and the conducting bodies. It's advisable to stay updated with official announcements for any future retake opportunities."
+  },
+  {
+    "question": "What is the eligibility criteria for MDCAT ?",
+    "answer": "A: The eligibility criteria for the Medical and Dental College Admission Test (MDCAT) 2024, as stipulated by the Pakistan Medical and Dental Council (PMDC), are as follows:\nHigher Secondary School Certificate (HSSC) or Equivalent: Candidates must have completed their HSSC (Pre-Medical) or an equivalent 12th-grade qualification recognized in Pakistan.\nMinimum Marks: A minimum of 60% marks in the HSSC or equivalent examination is required.\nMandatory Subjects: Candidates must have passed the subjects of Biology and Chemistry. Additionally, they should have studied either Physics or Mathematics"
+  },
+  {
+    "question": "Can I enter the exam hall without an admit slip in MDCAT 2024?",
+    "answer": "A: No you can not, Candidates must bring their original Admit Slip to the test center, along with one of the following original documents, which must be presented for verification: CNIC, Juvenile Card, Passport, Matriculation Marksheet, or Intermediate Marksheet. Entry will be denied without these."
+  },
+  {
+    "question": "Is transport provided by STS to test centers in MDCAT 2024?",
+    "answer": "A: No, SIBA Testing Services Doesn't provide transport service."
+  },
+  {
+    "question": "Is there any grace time for late arrival at center in MDCAT 2024 ?",
+    "answer": "A: According to the official SIBA Testing Service (STS) instructions for MDCAT?2024 (Retake), candidates must report by 8:30?AM on the exam day. Crucially, the published admit slip states: No candidate will be allowed to appear in the test after the test is started. In other words, there is no grace period beyond the scheduled start time. Any candidate arriving after the exam has begun will not be admitted."
+  },
+  {
+    "question": "What time does the MDCAT 2024 test start?",
+    "answer": "A: According to the official SIBA Testing Service (STS) instructions for MDCAT?2024 (Retake), candidates must report by 8:30?AM on the exam day. Crucially, the published admit slip states: No candidate will be allowed to appear in the test after the test is started. In other words, there is no grace period beyond the scheduled start time. Any candidate arriving after the exam has begun will not be admitted."
+  },
+  {
+    "question": "How early should I arrive at the test center in MDCAT 2024?",
+    "answer": "A: According to the official SIBA Testing Service (STS) instructions for MDCAT?2024 (Retake), candidates must report by 8:30?AM on the exam day. Crucially, the published admit slip states: No candidate will be allowed to appear in the test after the test is started. In other words, there is no grace period beyond the scheduled start time. Any candidate arriving after the exam has begun will not be admitted."
+  },
+  {
+    "question": "How can I confirm my test center for MDCAT in MDCAT 2024 ?",
+    "answer": "A: To confirm your assigned MDCAT-2024 test centre under SIBA Testing Service (STS), follow these steps:\n1.\tLog in to the STS Candidate Portal\n Go to https://apply.sts.net.pk/eslips\n Enter your registered CNIC (or email) and password to log in apply.sts.net.pk\n2.\tDownload your MDCAT-2024 Roll Number Slip\n Once logged in, click Download Slips and select MDCAT-2024 Roll Number Slip.\n The PDF slip displays your test centre name, complete address, date, and reporting time\n3.\tCheck the official announcement if slips arent yet available\n STS issues admit-slip upload notices as press releases. For the 2024 retake, see the PDF ISSUANCE OF ADMIT SLIPS FOR MDCAT-2024 RETAKE on the Sukkur IBA website iba-suk.edu.pk.\n4.\tWatch your email/SMS\n STS also notifies candidates via the mobile number and/or email you provided at registration once slips are live."
+  },
+  {
+    "question": "What measures are taken against cheating in MDCAT 2024 ?",
+    "answer": "A: To uphold the integrity of MDCAT-2024, the Pakistan Medical and Dental Council (PMDC) and SIBA Testing Services (STS) put in place a multi-layered anti-cheating framework:\n\tLegal safeguards\no\tSection 144 enforcement around all exam centres (no public gatherings or use of electronic devices within a 500 m radius) to deter outside assistance and proxy candidates \no\tMobile-service suspension for the duration of the test window in key regions (e.g. Peshawar, Punjab), coordinated with PTA, to block calls/data that might facilitate cheating.\n\tTechnical counter-measures\no\tSignal jammers installed inside examination halls to prevent Bluetooth- or Wi-Fi-based earpieces and other wireless transmissions.\no\tCCTV surveillance at every centre, recording all candidate activity for real-time monitoring and later audit.\no\tBiometric identification (fingerprint/face scan) at entry, ensuring that only the registered candidate takes the test.\no\tTamper-proof question-paper handling, with serialized, sealed packets under strict chain-of-custody until distribution.\n\tAdministrative oversight\no\tApex & supervisory committees formed by STS to oversee end-to-end test conduct under strict vigilance, from centre setup to result publication.\no\tMultiple invigilators and monitoring teams per halleach centre staffed with a chief supervisor, supervisors, invigilators, and monitorsto enforce seating plans, conduct ID/body searches, and patrol exam rooms.\n\tOn-site security\no\tPolice and security personnel posted at centre entrances to intercept any unauthorised materials or individuals and to respond immediately to incidents.\no\tStrict item bans: candidates barred from carrying mobile phones, smartwatches, calculators, notes, bags, etc.; prohibited items are collected at entry.\n\tPunitive actions\no\tImmediate disqualification & legal action against anyone caught with cheating devices (e.g., Bluetooth earpieces), including on-the-spot arrests and debarment from future exams.\no\tProsecution under anti-cheating/forgery laws, as outlined by PMDC, for facilitators or repeat offenders.\nCombined, these legal, technical, administrative, and punitive layers aim to deliver a fully transparent, merit-based MDCAT-2024 for all candidates."
+  },
+  {
+    "question": "Are digital watches allowed during MDCAT exam ?",
+    "answer": "A: No, For the MDCAT-2024 Retake conducted by SIBA Testing Services (STS), a comprehensive, multi-layered anti-cheating framework was implemented:\nSection 144 Enforcement: Prohibited public assemblies and use of electronic devices within a 500 m radius of all test centers."
+  },
+  {
+    "question": "What items are prohibited inside the MDCAT examination center in MDCAT 2024 ?",
+    "answer": "A: No, For the MDCAT-2024 Retake conducted by SIBA Testing Services (STS), a comprehensive, multi-layered anti-cheating framework was implemented:\nSection 144 Enforcement: Prohibited public assemblies and use of electronic devices within a 500 m radius of all test centers."
+  },
+  {
+    "question": "What documents do I need to bring for the MDCAT test in MDCAT 2024?",
+    "answer": "A: Candidates must bring their original Admit Slip to the test center, along with one of the following original documents, which must be presented for verification: CNIC, Juvenile Card, Passport, Matriculation Marksheet, or Intermediate Marksheet. Entry will be denied without these."
+  },
+  {
+    "question": "What facilities are provided for parents outside in MDCAT 2024 ?",
+    "answer": "A: Parents are requested to get benefited from the arranged sitting spaces near each test venue for their convenience if needed."
+  },
+  {
+    "question": "Is the MDCAT paper the same for all provinces in MDCAT 2024 ?",
+    "answer": "A: No  MDCAT-2024 used province-specific papers, not one single national paper:\nPMDC Oversight\nThe Pakistan Medical & Dental Council (PMDC) entrusted each admitting university with paper?setting under its unified syllabus and quality guidelines, rather than issuing one nationwide question booklet \nSindh (STS) Paper\nIn Sindh, SIBA Testing Services (under IBA?Sukkurs remit) prepared and administered its own MDCAT-2024 paper in accordance with the PMDC syllabus, distinct from other provinces exams \nUniform Syllabus, Varied Papers\nWhile every provincial paper adhered to the same PMDC-mandated syllabus and difficulty index, the questions themselves differed regionally to reflect local administration by each admitting body"
+  },
+  {
+    "question": "Can I bring a photocopy of my admit card to the test center in MDCAT 2024 ?",
+    "answer": "A: No, Candidates must bring their original Admit Slip to the test center, along with one of the following original documents, which must be presented for verification: CNIC, Juvenile Card, Passport, Matriculation Marksheet, or Intermediate Marksheet. Entry will be denied without these."
+  },
+  {
+    "question": "Has the MDCAT 2024 date been changed?",
+    "answer": "A: No  there has been no further change to the dates once officially announced:\nRetake of MDCAT-2024 (for Sindh, under SIBA STS) has been officially fixed for Sunday, December 8, 2024  this was announced in STSs Press Release No. STS/PRO/1954/24 dated November 16, 2024 (The MDCAT-2024 retake shall take place on Sunday, December 8, 2024, across six (06) cities in five (05) divisions of Sindh)\nIf youre sitting the retake, be sure to log in to the STS e-slips portal (https://apply.sts.net.pk/eslips), download the admit slip (which will show December 8, 2024 as your exam date), and plan to arrive at your center on that day."
+  },
+  {
+    "question": "Where can I check my MDCAT score in MDCAT 2024 ?",
+    "answer": "A: The MDCAT 2024 results will be announced shortly after the test. Candidates can check their scores on the official STS website. Answer keys are provided on the test day and can be downloaded from the announcements section."
+  },
+  {
+    "question": "Is a calculator allowed in MDCAT 2024 ?",
+    "answer": "A: Calculators are strictly prohibited in MDCAT-2024. According to the official Pakistan Medical Commission (formerly PMDC) MDCAT Guidelines,\nSIBA-STS follows the same rule in its candidate instructions: only writing paper/pens supplied by the centre may be used for any calculations. Any candidate found in possession of a calculator will be treated as using unfair means, leading to immediate disqualification."
+  },
+  {
+    "question": "Are the answer keys same for all versions of the test in MDCAT 2024 ?",
+    "answer": "A: No  the answer keys are version?specific, not a single key for everyone. For the MDCAT-2024 Retake, STS has released separate answer?key files for Test Papers A, B, and C. You must download the key that matches the version code printed on your roll-number slip:\n1.\tVisit the STS Announcements page:\nhttps://iba-suk.edu.pk/sts/announcements\n2.\tLocate the Answer Keys Announcement  MDCAT-2024 Retake entry.\n3.\tDownload the PDF corresponding to your paper version (A, B, or C).\nEach PDF contains only the correct responses for that particular booklet"
+  },
+  {
+    "question": "Are washrooms available at the MDCAT venue in MDCAT 2024?",
+    "answer": "A: es, washroom facilities were available at MDCAT 2024 examination centers. According to reports, candidates were provided with toilet facilities, along with other amenities such as first aid stations and medical teams from Rescue 1122 and the health department. Additionally, mineral water, juice, biscuits, ballpoints, and examination boards were supplied to all candidates at the centers"
+  },
+  {
+    "question": "Where can I find the official MDCAT 2024 schedule?",
+    "answer": "A: You can download the official schedule for the MDCAT 2024 retake conducted by SIBA Testing Services (STS) directly from the Sukkur IBA University website.\nSTS Announcements Page: Visit the STS Announcements page and look for the press release titled Press Release: Announcement of MDCAT-2024 (Retake) dated November 20, 2024."
+  },
+  {
+    "question": "Will MDCAT be conducted in multiple shifts in MDCAT 2024 ?",
+    "answer": "A: The MDCAT 2024 retake conducted by SIBA Testing Services (STS) on Sunday, December 8, 2024, was administered as a single-shift, paper-based exam across all designated centers in Sindh. The test was scheduled to begin at 10:00 AM, and there is no official indication that it was conducted in multiple shifts.?\n\nHowever, it's noteworthy that the exam experienced a delay, commencing around 11:55 AM at all centers, and concluded after three and a half hours. This delay was due to administrative issues, but it did not result in the exam being split into multiple shifts"
+  },
+  {
+    "question": "Is the MDCAT 2024 paper leak news true in MDCAT 2024 ?",
+    "answer": "A: Yes, the MDCAT 2024 examination conducted in Sindh experienced a confirmed paper leak. Investigations by the Federal Investigation Agency (FIA) revealed that the paper was leaked prior to the exam and circulated via social media platforms, including WhatsApp. Evidence included WhatsApp chats, voice notes, and financial transactions related to the sale of the leaked paper.\nAs a result, the Sindh High Court ordered a retake of the MDCAT for students in Sindh. The retest was conducted by SIBA Testing Services (STS) on December 8, 2024, to ensure fairness and integrity in the examination process"
+  },
+  {
+    "question": "Can parents wait inside the test center in MDCAT 2024 in MDCAT 2024 in MDCAT 2024 in MDCAT 2024 in MDCAT 2024?",
+    "answer": "A: Parents are requested to get benefited from the arranged sitting spaces near each test venue for their convenience if needed."
+  },
+  {
+    "question": "Who is responsible for MDCAT paper security in MDCAT 2024 ?",
+    "answer": "A: o\tApex & supervisory committees formed by STS to oversee end-to-end test conduct under strict vigilance, from centre setup to result publication.\no\tMultiple invigilators and monitoring teams per halleach centre staffed with a chief supervisor, supervisors, invigilators, and monitorsto enforce seating plans, conduct ID/body searches, and patrol exam rooms.\n\tOn-site security\no\tPolice and security personnel posted at centre entrances to intercept any unauthorised materials or individuals and to respond immediately to incidents.\no\tStrict item bans: candidates barred from carrying mobile phones, smartwatches, calculators, notes, bags, etc.; prohibited items are collected at entry."
+  },
+  {
+    "question": "Will STS accept foreign students for MDCAT in MDCAT 2024 ?",
+    "answer": "A: The MDCAT 2024 retake conducted by SIBA Testing Services (STS) was exclusively for candidates who had previously appeared in the original MDCAT 2024 exam held in Sindh. According to official announcements, only students who participated in the initial MDCAT 2024 in Sindh were eligible for the retake. No new registrations were accepted, and the retake was not open to foreign students or those who had not taken the original exam in Sindh.\nThe retake was scheduled for December 8, 2024, and was conducted across six cities in Sindh: Karachi, Hyderabad, Jamshoro, Shaheed Benazirabad, Larkana, and Sukkur."
+  },
+  {
+    "question": "Is there negative marking in MDCAT 2024?",
+    "answer": "A: SIBA Testing Services follows the eligibility criteria and marking scheme as outlined by PMDC. Candidates must meet all academic requirements and no negative marking will be applied in MDCAT 2024."
+  }
+]
