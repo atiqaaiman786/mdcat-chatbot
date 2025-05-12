@@ -1,9 +1,3 @@
-!pip install streamlit
-pip install --force-reinstall transformers
-!pip install langchain sentence-transformers faiss-cpu transformers
-!pip install -U langchain-community
-!pip install python-docx
-!pip install tf-keras
 
 
 # chatbot.py
@@ -48,3 +42,19 @@ def get_answer(query, index):
     result = qa_pipeline(question=query, context=context)
     return result["answer"], context
 
+# Streamlit UI
+st.title("🧠 MDCAT Smart Chatbot")
+st.write("Ask about Past Papers or Test Policies")
+
+mode = st.selectbox("Choose Chat Mode", ["Past Papers", "Test Policies"])
+query = st.text_input("Enter your question")
+
+if st.button("Get Answer") and query:
+    index = past_index if mode == "Past Papers" else faq_index
+    answer, ctx = get_answer(query, index)
+    
+    st.subheader("📌 Answer")
+    st.write(answer)
+
+    with st.expander("🔍 Show Context Used"):
+        st.text(ctx)
