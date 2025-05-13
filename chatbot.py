@@ -82,13 +82,13 @@ def generate_answer(query):
 
 
 # --- Streamlit Chat Interface (NEW UI)
-st.set_page_config(page_title="MDCAT Chatbot", layout="centered")
-st.title("📘 MDCAT Chatbot")
-st.markdown("Ask anything related to MDCAT past papers or policies.")
+st.set_page_config(page_title="Ask-MDCAT Chatbot", layout="centered")
+st.title("📘 Ask-MDCAT Chatbot")
+st.markdown("Ask anything related to MDCAT past papers or MDCAT policies.")
 
 # Initialize session state
 if "chat_history" not in st.session_state:
-    st.session_state.chat_history = []  # list of (user, bot) tuples
+    st.session_state.chat_history = []
 
 # Chat input box
 user_input = st.chat_input("Ask your MDCAT-related question...")
@@ -96,10 +96,9 @@ user_input = st.chat_input("Ask your MDCAT-related question...")
 if user_input:
     with st.spinner("Thinking..."):
         bot_reply = generate_answer(user_input)
-    # Store new interaction at the end
     st.session_state.chat_history.append((user_input, bot_reply))
 
-# Display all messages in reverse (latest at top)
-for user_msg, bot_msg in reversed(st.session_state.chat_history):
+# Show messages in order (newest at bottom)
+for user_msg, bot_msg in st.session_state.chat_history:
     st.chat_message("user").markdown(user_msg)
     st.chat_message("assistant").markdown(bot_msg)
