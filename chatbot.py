@@ -32,7 +32,7 @@ index.add(np.array(embeddings))
 
 # Load Phi-2 LLM
 tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-rw-1b")
-model = AutoModelForCausalLM.from_pretrained("tiiuae/falcon-rw-1b", device_map="auto")
+model = AutoModelForCausalLM.from_pretrained("tiiuae/falcon-rw-1b")
 generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
 
 tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-rw-1b")
