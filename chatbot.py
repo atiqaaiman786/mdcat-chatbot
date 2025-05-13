@@ -1,10 +1,9 @@
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 import json
 import streamlit as st
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
-from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from sentence_transformers import SentenceTransformer
 
 #Load and merge JSON data
 #with open(r"C:\Users\DELL\Downloads\mdcat\mdcat_chatbot\combined_output.json", encoding="utf-8", errors="ignore") as f1, #open(r"C:\Users\DELL\Downloads\mdcat\mdcat_chatbot\MDCAT_FAQs.json", encoding="utf-8", errors="ignore") as f2:
@@ -67,7 +66,10 @@ Answer:"""
     return output.split("Answer:")[-1].strip()
 
 # Streamlit GUI
+st.set_page_config(page_title="MDCAT Chatbot", layout="centered")
 st.title("📘 MDCAT Chatbot")
+st.markdown("Ask anything related to MDCAT past papers or policies.")
+
 user_query = st.text_input("Ask your MDCAT-related question:")
 
 if user_query:
