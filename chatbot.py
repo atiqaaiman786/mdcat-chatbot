@@ -1,67 +1,66 @@
-
-
-# chatbot.py
+%%writefile mdcat_chatbot.py
 import json
 import streamlit as st
-from langchain.schema import Document
-from langchain_core.documents import Document
-from transformers import pipeline
-from langchain_community.embeddings import SentenceTransformerEmbeddings
-from langchain_community.vectorstores import FAISS
-from langchain_huggingface import HuggingFaceEmbeddings
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from sentence_transformers import SentenceTransformer
+import faiss
+import numpy as np
 
-# Set to force Transformers to use PyTorch only
-os.environ["TRANSFORMERS_NO_TF"] = "1"
-
-# Load JSON files
-with open(r"C:\Users\DELL\Downloads\mdcat\json\combined_mdcat_qa.json", "r", encoding="utf-8", errors="ignore") as f:
-    past_data = json.load(f)
-
-with open(r"C:\Users\DELL\Downloads\mdcat\json\MDCAT_FAQs.json", "r", encoding="utf-8", errors="ignore") as f:
-    faq_data = json.load(f)
-
-# Create Documents
-past_docs = [Document(page_content=d["question"] + "\n" + d["answer"]) for d in past_data]
-faq_docs = [Document(page_content=d["question"] + "\n" + d["answer"]) for d in faq_data]
-
-# Create Embeddings
-#embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
-embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+ Load and merge JSON data
+with open("C:\Users\DELL\Downloads\mdcat\json\combined_mdcat_qa.json") as f1, open("C:\Users\DELL\Downloads\mdcat\json\MDCAT_FAQs.json") as f2:
+    data = json.load(f1) + json.load(f2)
 
 
-past_index = FAISS.from_documents(past_docs, embedding)
-faq_index = FAISS.from_documents(faq_docs, embedding)
+questions = [item["question"] for item in data]
+answers = [item["answer"] for item in data]
 
-# Load Question Answering pipeline 
-#qa_pipeline = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
+# Embedding model
+embed_model = SentenceTransformer("all-MiniLM-L6-v2")
+embeddings = embed_model.encode(questions)
+index = faiss.IndexFlatL2(embeddings[0].shape[0])
+index.add(np.array(embeddings))
 
+# Load Phi-2 LLM
+tokenizer = AutoTokenizer.from_pretrained("microsoft/phi-2")
+model = AutoModelForCausalLM.from_pretrained("microsoft/phi-2", device_map="auto")
+generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
 
-# Force Hugging Face to use PyTorch backend
-qa_pipeline = pipeline("question-answering", model="distilbert-base-cased-distilled-squad", framework="pt")
+# Retrieval function
+def get_context(query, k=3, threshold=0.75):
+    query_vec = embed_model.encode([query])
+    distances, indices = index.search(np.array(query_vec), k)
+    contexts = []
+    for i, dist in zip(indices[0], distances[0]):
+        if dist < threshold:
+            contexts.append(answers[i])
+    return contexts
 
-# Load QA pipeline (this avoids TensorFlow)
-#qa = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")  # This will now work using PyTorch
+# RAG prompt + fallback logic
+def generate_answer(query):
+    context_list = get_context(query)
+    if context_list:
+        context = "\n".join(context_list)
+        prompt = f"""You are a helpful MDCAT assistant. Use the following context to answer the question.
 
+Context:
+{context}
 
-def get_answer(query, index):
-    docs = index.similarity_search(query, k=3)
-    context = "\n".join([doc.page_content for doc in docs])
-    result = qa_pipeline(question=query, context=context)
-    return result["answer"], context
+Question: {query}
+Answer:"""
+    else:
+        prompt = f"""You are a knowledgeable MDCAT assistant. Answer the following question using general knowledge if needed.
 
-# Streamlit UI
-st.title("🧠 MDCAT Smart Chatbot")
-st.write("Ask about Past Papers or Test Policies")
+Question: {query}
+Answer:"""
 
-mode = st.selectbox("Choose Chat Mode", ["Past Papers", "Test Policies"])
-query = st.text_input("Enter your question")
+    output = generator(prompt, max_new_tokens=200)[0]["generated_text"]
+    return output.split("Answer:")[-1].strip()
 
-if st.button("Get Answer") and query:
-    index = past_index if mode == "Past Papers" else faq_index
-    answer, ctx = get_answer(query, index)
-    
-    st.subheader("📌 Answer")
-    st.write(answer)
+# Streamlit GUI
+st.title("📘 MDCAT Chatbot")
+user_query = st.text_input("Ask your MDCAT-related question:")
 
-    with st.expander("🔍 Show Context Used"):
-        st.text(ctx)
+if user_query:
+    with st.spinner("Thinking..."):
+        response = generate_answer(user_query)
+    st.markdown(f"**Answer:** {response}")
