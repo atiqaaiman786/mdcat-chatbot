@@ -1,4 +1,4 @@
-%%writefile mdcat_chatbot.py
+
 import json
 import streamlit as st
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
