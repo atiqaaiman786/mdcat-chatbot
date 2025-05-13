@@ -1,9 +1,15 @@
 import json
 import streamlit as st
-import faiss
+#import faiss
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 from sentence_transformers import SentenceTransformer
+
+try:
+    import faiss
+except ImportError:
+    import faiss_cpu as faiss
+
 
 #Load and merge JSON data
 #with open(r"C:\Users\DELL\Downloads\mdcat\mdcat_chatbot\combined_output.json", encoding="utf-8", errors="ignore") as f1, #open(r"C:\Users\DELL\Downloads\mdcat\mdcat_chatbot\MDCAT_FAQs.json", encoding="utf-8", errors="ignore") as f2:
