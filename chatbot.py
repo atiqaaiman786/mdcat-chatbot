@@ -7,7 +7,7 @@ import faiss
 import numpy as np
 
 #Load and merge JSON data
-with open("C:\Users\DELL\Downloads\mdcat\json\combined_mdcat_qa.json") as f1, open("C:\Users\DELL\Downloads\mdcat\json\MDCAT_FAQs.json") as f2:
+with open(r"C:\Users\DELL\Downloads\mdcat\json\combined_mdcat_qa.json") as f1, open(r"C:\Users\DELL\Downloads\mdcat\json\MDCAT_FAQs.json") as f2:
     data = json.load(f1) + json.load(f2)
 
 
