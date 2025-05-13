@@ -81,14 +81,25 @@ def generate_answer(query):
 
 
 
-# Streamlit GUI
+# --- Streamlit Chat Interface (NEW UI)
 st.set_page_config(page_title="MDCAT Chatbot", layout="centered")
 st.title("📘 MDCAT Chatbot")
 st.markdown("Ask anything related to MDCAT past papers or policies.")
 
-user_query = st.text_input("Ask your MDCAT-related question:")
+# Initialize session state
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []  # list of (user, bot) tuples
 
-if user_query:
+# Chat input box
+user_input = st.chat_input("Ask your MDCAT-related question...")
+
+if user_input:
     with st.spinner("Thinking..."):
-        response = generate_answer(user_query)
-    st.markdown(f"**Answer:** {response}")
+        bot_reply = generate_answer(user_input)
+    # Store new interaction at the end
+    st.session_state.chat_history.append((user_input, bot_reply))
+
+# Display all messages in reverse (latest at top)
+for user_msg, bot_msg in reversed(st.session_state.chat_history):
+    st.chat_message("user").markdown(user_msg)
+    st.chat_message("assistant").markdown(bot_msg)
