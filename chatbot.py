@@ -31,8 +31,8 @@ index = faiss.IndexFlatL2(embeddings[0].shape[0])
 index.add(np.array(embeddings))
 
 # Load Phi-2 LLM
-tokenizer = AutoTokenizer.from_pretrained(r"C:\Users\DELL\.cache\huggingface\hub\models--tiiuae--falcon-rw-1b")
-model = AutoModelForCausalLM.from_pretrained(r"C:\Users\DELL\.cache\huggingface\hub\models--tiiuae--falcon-rw-1b", device_map="auto")
+tokenizer = AutoTokenizer.from_pretrained(r"C:\Users\DELL\.cache\huggingface\hub\models--tiiuae--falcon-rw-1b\snapshots\e4b9872bb803165eb22f0a867d4e6a64d34fce19")
+model = AutoModelForCausalLM.from_pretrained(r"C:\Users\DELL\.cache\huggingface\hub\models--tiiuae--falcon-rw-1b\snapshots\e4b9872bb803165eb22f0a867d4e6a64d34fce19", device_map="auto")
 generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
 
 tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-rw-1b")
