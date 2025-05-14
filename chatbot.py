@@ -9,7 +9,7 @@ import numpy as np
 # === Load data ===
 def load_data():
     data = []
-    for file in ['combined_mdcat_qa.json', 'MDCAT_FAQs.json']:
+    for file in ['combined_output.json', 'MDCAT_FAQs.json']:
         with open(file, 'r', encoding='utf-8') as f:
             data += json.load(f)
     return data
@@ -49,14 +49,18 @@ def load_llm():
 
 # === Streamlit UI ===
 def main():
-    st.title("💬 ASK MDCAT Chatbot")
+    st.set_page_config(page_title="ASK MDCAT Assistant", page_icon="💬")
+    st.markdown("<h1 style='text-align: center;'>💬 ASK MDCAT Assistant</h1>", unsafe_allow_html=True)
     st.write("Ask anything about past papers or MDCAT test policy.")
 
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
-    user_input = st.text_input("You:", key="input")
-    if user_input:
+    with st.form("chat_form", clear_on_submit=True):
+        user_input = st.text_input("You:", key="input_text", placeholder="Ask your question here...")
+        submitted = st.form_submit_button("Send")
+
+    if submitted and user_input:
         st.session_state.chat_history.append(("You", user_input))
 
         # Retrieval + LLM
