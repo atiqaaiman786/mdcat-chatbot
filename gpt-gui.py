@@ -1,8 +1,13 @@
 import streamlit as st
+
+st.set_page_config(page_title="ASK MDCAT Assistant", page_icon="💬")
+
+
+
+
 from sentence_transformers import SentenceTransformer
 from core_chatbot import load_data, create_or_load_index, search_query, generate_response_with_gpt
 
-st.set_page_config(page_title="ASK MDCAT Assistant", page_icon="💬")
 
 st.markdown("<h1 style='text-align: center;'>💬 ASK MDCAT Assistant</h1>", unsafe_allow_html=True)
 st.write("Ask anything about past papers or MDCAT test policy.")
