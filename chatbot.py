@@ -16,8 +16,7 @@ except ImportError:
 #    data = json.load(f1) + json.load(f2)
 
 
-with open("combined_mdcat_qa.json", encoding="utf-8", errors="ignore") as f1, \
-     open("MDCAT_FAQs.json", encoding="utf-8", errors="ignore") as f2:
+with open("combined_mdcat_qa.json", encoding="utf-8", errors="ignore") as f1, open("MDCAT_FAQs.json", encoding="utf-8", errors="ignore") as f2:
     data = json.load(f1) + json.load(f2)
 
 
