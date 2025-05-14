@@ -1,7 +1,7 @@
 import json
 import streamlit as st
 import numpy as np
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+import requests
 from sentence_transformers import SentenceTransformer
 
 try:
@@ -23,12 +23,7 @@ embeddings = embed_model.encode(questions)
 index = faiss.IndexFlatL2(embeddings[0].shape[0])
 index.add(np.array(embeddings))
 
-# Load GPT-Neo 125M
-tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neo-125M")
-model = AutoModelForCausalLM.from_pretrained("EleutherAI/gpt-neo-125M")
-generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
-
-# Context retriever
+# Query FAISS to get context
 def get_context(query, k=3, threshold=0.75):
     query_vec = embed_model.encode([query])
     distances, indices = index.search(np.array(query_vec), k)
@@ -38,7 +33,21 @@ def get_context(query, k=3, threshold=0.75):
             contexts.append(answers[i])
     return contexts
 
-# Answer generator
+# --- ✅ Replace GPT-Neo with Ollama ---
+def generate_with_ollama(prompt, model="llama3"):
+    try:
+        response = requests.post(
+            "http://localhost:11434/api/generate",
+            json={"model": model, "prompt": prompt, "stream": False}
+        )
+        if response.status_code == 200:
+            return response.json()["response"]
+        else:
+            return f"⚠️ Ollama Error {response.status_code}: {response.text}"
+    except Exception as e:
+        return f"❌ Ollama Exception: {str(e)}"
+
+# Main answer generation
 def generate_answer(query):
     context_list = get_context(query)
     if context_list:
@@ -56,8 +65,7 @@ Answer:"""
 Question: {query}
 Answer:"""
 
-    response = generator(prompt, max_length=300, do_sample=True)[0]['generated_text']
-    return response.split("Answer:")[-1].strip()
+    return generate_with_ollama(prompt)
 
 # --- Streamlit UI
 st.set_page_config(page_title="Ask-MDCAT Chatbot", layout="centered")
