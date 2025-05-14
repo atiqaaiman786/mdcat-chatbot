@@ -2,7 +2,7 @@ import json
 import streamlit as st
 #import faiss
 import numpy as np
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+#from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 from sentence_transformers import SentenceTransformer
 
 try:
@@ -30,16 +30,12 @@ index = faiss.IndexFlatL2(embeddings[0].shape[0])
 index.add(np.array(embeddings))
 
 # Load Phi-2 LLM
-tokenizer = AutoTokenizer.from_pretrained("deepset/minilm-uncased-squad2")
-model = AutoModelForCausalLM.from_pretrained("deepset/minilm-uncased-squad2", device_map="auto")
-generator = pipeline("question-answering", model=model, tokenizer=tokenizer)
-
-#tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-rw-1b")
-#model = AutoModelForCausalLM.from_pretrained("tiiuae/falcon-rw-1b")
-#generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
+#tokenizer = AutoTokenizer.from_pretrained("deepset/minilm-uncased-squad2")
+#model = AutoModelForCausalLM.from_pretrained("deepset/minilm-uncased-squad2", device_map="auto")
+#generator = pipeline("question-answering", model=model, tokenizer=tokenizer)
 
 
-# Retrieval function
+#Retrieval function
 def get_context(query, k=3, threshold=0.75):
     query_vec = embed_model.encode([query])
     distances, indices = index.search(np.array(query_vec), k)
@@ -50,32 +46,32 @@ def get_context(query, k=3, threshold=0.75):
     return contexts
 
 # RAG prompt + fallback logic
-def generate_answer(query):
-    context_list = get_context(query)
-    if context_list:
-        context = "\n".join(context_list)
-        prompt = f"""You are a helpful MDCAT assistant. Use the following context to answer the question.
-
-Context:
-{context}
-
-Question: {query}
-Answer:"""
-    else:
-        prompt = f"""You are a knowledgeable MDCAT assistant. Answer the following question using general knowledge if needed.
-
-Question: {query}
-Answer:"""
-
-    output = generator(prompt, max_new_tokens=200)[0]["generated_text"]
-    return output.split("Answer:")[-1].strip()
-
 #def generate_answer(query):
 #    context_list = get_context(query)
 #    if context_list:
-#        return "\n\n".join(context_list)
+#       context = "\n".join(context_list)
+#        prompt = f"""You are a helpful MDCAT assistant. Use the following context to answer the question.
+
+#Context:
+#{context}
+
+#Question: {query}
+#Answer:"""
 #    else:
-#        return "Sorry, I couldn’t find a relevant answer. Try asking something from MDCAT past papers or policy topics."
+#        prompt = f"""You are a knowledgeable MDCAT assistant. Answer the following question using general knowledge if needed.
+
+#Question: {query}
+#Answer:"""
+
+#    output = generator(prompt, max_new_tokens=200)[0]["generated_text"]
+#    return output.split("Answer:")[-1].strip()
+
+def generate_answer(query):
+    context_list = get_context(query)
+    if context_list:
+        return "\n\n".join(context_list)
+    else:
+        return "Sorry, I couldn’t find a relevant answer. Try asking something from MDCAT past papers or policy topics."
 
 
 
