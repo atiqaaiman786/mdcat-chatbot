@@ -9,7 +9,7 @@ import numpy as np
 # === Load data ===
 def load_data():
     data = []
-    for file in ['past_papers.json', 'test_policies.json']:
+    for file in ['combined_mdcat_qa.json', 'MDCAT_FAQs.json']:
         with open(file, 'r', encoding='utf-8') as f:
             data += json.load(f)
     return data
