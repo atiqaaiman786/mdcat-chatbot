@@ -6,7 +6,7 @@ st.set_page_config(page_title="ASK MDCAT Assistant", page_icon="💬")
 
 
 from sentence_transformers import SentenceTransformer
-from core_chatbot import load_data, create_or_load_index, search_query, generate_response_with_gpt
+from gpt_chatbot import load_data, create_or_load_index, search_query, generate_response_with_gpt
 
 
 st.markdown("<h1 style='text-align: center;'>💬 ASK MDCAT Assistant</h1>", unsafe_allow_html=True)
