@@ -1,8 +1,7 @@
 import json
 import streamlit as st
-#import faiss
 import numpy as np
-#from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from transformers import pipeline
 from sentence_transformers import SentenceTransformer
 
 try:
@@ -10,15 +9,9 @@ try:
 except ImportError:
     import faiss_cpu as faiss
 
-
-#Load and merge JSON data
-#with open(r"C:\Users\DELL\Downloads\mdcat\mdcat_chatbot\combined_output.json", encoding="utf-8", errors="ignore") as f1, #open(r"C:\Users\DELL\Downloads\mdcat\mdcat_chatbot\MDCAT_FAQs.json", encoding="utf-8", errors="ignore") as f2:
-#    data = json.load(f1) + json.load(f2)
-
-
+# Load and merge JSON data
 with open("combined_mdcat_qa.json", encoding="utf-8", errors="ignore") as f1, open("MDCAT_FAQs.json", encoding="utf-8", errors="ignore") as f2:
     data = json.load(f1) + json.load(f2)
-
 
 questions = [item["question"] for item in data]
 answers = [item["answer"] for item in data]
@@ -29,13 +22,10 @@ embeddings = embed_model.encode(questions)
 index = faiss.IndexFlatL2(embeddings[0].shape[0])
 index.add(np.array(embeddings))
 
-# Load Phi-2 LLM
-#tokenizer = AutoTokenizer.from_pretrained("deepset/minilm-uncased-squad2")
-#model = AutoModelForCausalLM.from_pretrained("deepset/minilm-uncased-squad2", device_map="auto")
-#generator = pipeline("question-answering", model=model, tokenizer=tokenizer)
+# ✅ Load the correct question-answering pipeline
+qa_pipeline = pipeline("question-answering", model="deepset/minilm-uncased-squad2")
 
-
-#Retrieval function
+# Retrieval function
 def get_context(query, k=3, threshold=0.75):
     query_vec = embed_model.encode([query])
     distances, indices = index.search(np.array(query_vec), k)
@@ -45,36 +35,15 @@ def get_context(query, k=3, threshold=0.75):
             contexts.append(answers[i])
     return contexts
 
-# RAG prompt + fallback logic
-#def generate_answer(query):
-#    context_list = get_context(query)
-#    if context_list:
-#       context = "\n".join(context_list)
-#        prompt = f"""You are a helpful MDCAT assistant. Use the following context to answer the question.
-
-#Context:
-#{context}
-
-#Question: {query}
-#Answer:"""
-#    else:
-#        prompt = f"""You are a knowledgeable MDCAT assistant. Answer the following question using general knowledge if needed.
-
-#Question: {query}
-#Answer:"""
-
-#    output = generator(prompt, max_new_tokens=200)[0]["generated_text"]
-#    return output.split("Answer:")[-1].strip()
-
+# Generate answer using extractive QA pipeline
 def generate_answer(query):
     context_list = get_context(query)
     if context_list:
-        return "\n\n".join(context_list)
+        context = "\n".join(context_list)
+        result = qa_pipeline(question=query, context=context)
+        return result["answer"]
     else:
         return "Sorry, I couldn’t find a relevant answer. Try asking something from MDCAT past papers or policy topics."
-
-
-
 
 # --- Streamlit Chat Interface (NEW UI)
 st.set_page_config(page_title="Ask-MDCAT Chatbot", layout="centered")
