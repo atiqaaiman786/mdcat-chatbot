@@ -6,7 +6,7 @@ from sentence_transformers import SentenceTransformer
 import openai
 #import streamlit as st
 
-#openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "REMOVED_KEY"
 
 # Set your OpenAI API key (recommended via environment variable)
 #openai.api_key = os.getenv("OPENAI_API_KEY")  # or replace with "sk-..." string directly
