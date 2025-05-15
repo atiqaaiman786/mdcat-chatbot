@@ -34,20 +34,35 @@ def create_or_load_index(data, model, index_file='vector_store/mdcat.index'):
     return index, id_map
 
 # === Semantic Search ===
-def search_query(query, model, index, id_map, top_k=1):
+#def search_query(query, model, index, id_map, top_k=1):
+#    query_vector = model.encode([query])
+#    D, I = index.search(np.array(query_vector).astype('float32'), top_k)
+#    if I[0][0] == -1:
+#        return None
+#    return id_map[str(I[0][0])]["answer"]
+
+
+
+def search_query(query, model, index, id_map, top_k=1, threshold=0.6):
     query_vector = model.encode([query])
     D, I = index.search(np.array(query_vector).astype('float32'), top_k)
-    if I[0][0] == -1:
+    if I[0][0] == -1 or D[0][0] > threshold:  # lower distance = higher similarity
         return None
     return id_map[str(I[0][0])]["answer"]
 
+
 # === OpenAI GPT Response ===
 def generate_response_with_gpt(query):
-    prompt = f"MDCAT student asked: {query}\nAnswer:"
+    prompt = (
+    "You are an intelligent tutor for MDCAT preparation. "
+    "You should prioritize answering questions from the MDCAT syllabus. "
+    "If the question is not directly related to MDCAT, still provide a helpful general response.\n\n"
+    f"Question: {query}\nAnswer:"
+    )
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant answering MDCAT-related questions."},
+            {"role": "system", "content": "You are a knowledgeable assistant who helps MDCAT students by answering both exam-related and general academic queries clearly and politely."},
             {"role": "user", "content": prompt}
         ],
         temperature=0.5,
