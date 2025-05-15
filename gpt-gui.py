@@ -60,8 +60,15 @@ if submitted and user_input:
 
     st.session_state.chat_history.append(("Bot", response))
 
-for sender, msg in st.session_state.chat_history:
+#for sender, msg in st.session_state.chat_history:
+#    if sender == "You":
+#        st.markdown(f"<div class='chat-bubble user'>👤 {msg}</div>", unsafe_allow_html=True)
+#    else:
+#        st.markdown(f"<div class='chat-bubble bot'>🤖 {msg}</div>", unsafe_allow_html=True)
+
+for sender, msg in reversed(st.session_state.chat_history):
     if sender == "You":
         st.markdown(f"<div class='chat-bubble user'>👤 {msg}</div>", unsafe_allow_html=True)
     else:
         st.markdown(f"<div class='chat-bubble bot'>🤖 {msg}</div>", unsafe_allow_html=True)
+
