@@ -49,7 +49,7 @@ def load_llm():
 
 # === Streamlit UI ===
 def main():
-    st.set_page_config(page_title="ASK MDCAT Assistant", page_icon="💬")
+    #st.set_page_config(page_title="ASK MDCAT Assistant", page_icon="💬")
     st.markdown("<h1 style='text-align: center;'>💬 ASK MDCAT Assistant</h1>", unsafe_allow_html=True)
     st.write("Ask anything about past papers or MDCAT test policy.")
 
