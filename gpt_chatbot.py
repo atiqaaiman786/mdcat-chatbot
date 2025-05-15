@@ -4,9 +4,14 @@ import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
 import openai
+import streamlit as st
+
 
 # Set your OpenAI API key (recommended via environment variable)
-openai.api_key = os.getenv("OPENAI_API_KEY")  # or replace with "sk-..." string directly
+#openai.api_key = os.getenv("OPENAI_API_KEY")  # or replace with "sk-..." string directly
+
+openai.api_key = st.secrets["OPENAI_API_KEY"]
+
 
 # === Load Data ===
 def load_data():
