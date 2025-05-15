@@ -6,7 +6,6 @@ from sentence_transformers import SentenceTransformer
 import openai
 #import streamlit as st
 
-#openai.api_key = "sk-proj-8TPbZy_Z9GSVj9M6sJJmjvASjU24oa8Bl3Qg-XQAhDPFsPhHRj"
 
 try:
     import streamlit as st
