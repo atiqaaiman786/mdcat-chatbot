@@ -1,7 +1,7 @@
 import streamlit as st
 
 # MUST be the first Streamlit command!
-st.set_page_config(page_title="ASK MDCAT Assistant", page_icon="💬")
+#st.set_page_config(page_title="ASK MDCAT Assistant", page_icon="💬")
 
 from sentence_transformers import SentenceTransformer
 from core_chatbot import load_data, create_or_load_index, search_query, load_llm
