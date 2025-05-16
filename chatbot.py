@@ -32,10 +32,19 @@ def create_or_load_index(data, model, index_file='vector_store/mdcat.index'):
     return index, id_map
 
 # === Get best match ===
-def search_query(query, model, index, id_map, top_k=1):
+#def search_query(query, model, index, id_map, top_k=1):
+#    query_vector = model.encode([query])
+#    D, I = index.search(np.array(query_vector).astype('float32'), top_k)
+#    if I[0][0] == -1:
+#        return None
+#    return id_map[str(I[0][0])]["answer"]
+
+
+
+def search_query(query, model, index, id_map, top_k=1, threshold=0.6):
     query_vector = model.encode([query])
     D, I = index.search(np.array(query_vector).astype('float32'), top_k)
-    if I[0][0] == -1:
+    if I[0][0] == -1 or D[0][0] > threshold:  # lower distance = higher similarity
         return None
     return id_map[str(I[0][0])]["answer"]
 
@@ -47,9 +56,21 @@ def load_llm():
     generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
     return generator
 
+
+# === Custom Prompted Response Function ===
+def generate_response_with_prompt(generator, query):
+    prompt = (
+        "You are an intelligent tutor for MDCAT preparation. "
+        "You should prioritize answering questions from the MDCAT syllabus. "
+        "If the question is not directly related to MDCAT, still provide a helpful general response.\n\n"
+        f"Question: {query}\nAnswer:"
+    )
+    response = generator(prompt, max_length=200, temperature=0.7, do_sample=True)
+    return response[0]["generated_text"].replace(prompt, "").strip()
+
 # === Streamlit UI ===
 def main():
-    #st.set_page_config(page_title="ASK MDCAT Assistant", page_icon="💬")
+    st.set_page_config(page_title="ASK MDCAT Assistant", page_icon="💬")
     st.markdown("<h1 style='text-align: center;'>💬 ASK MDCAT Assistant</h1>", unsafe_allow_html=True)
     st.write("Ask anything about past papers or MDCAT test policy.")
 
